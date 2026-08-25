@@ -1,0 +1,15 @@
+{
+  "name": "cordis-snake-game",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A snake game built on the Cordis (everything-is-a-plugin) meta-framework",
+  "bin": { "cordis-snake": "src/index.js" },
+  "scripts": {
+    "start": "node src/index.js",
+    "selftest": "node src/selftest.js",
+    "verify": "node scripts/verify-all.mjs",
+    "gate": "npm run selftest && npm run verify"
+  },
+  "dependencies": { "cordis": "^4.0.0-rc.8" }
+}

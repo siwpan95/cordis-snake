@@ -1,0 +1,37 @@
+{
+  "name": "cordis-snake",
+  "description": "用 Cordis「一切皆插件」架构实现的贪吃蛇。游戏由这份插件清单定义——这就是 DeepSeek Harness 风格的 cordis.yml。input/snakes/sound/board 都是常驻能力服务；键盘/AI/关卡/多人/音效后端都是可热插拔的插件。改这份清单（或保存文件启用 --watch）即可热重载，无需重启进程。",
+  "plugins": [
+    { "name": "logger-console" },
+    { "name": "timer", "config": { "intervalMs": 110, "auto": true } },
+    { "name": "board", "config": { "width": 28, "height": 18 } },
+    { "name": "input" },
+    { "name": "snakes" },
+    { "name": "sound", "config": { "enabled": true } },
+    { "name": "sound-hooks", "enabled": true },
+    { "name": "sound-wav", "enabled": true },
+    { "name": "food" },
+    { "name": "score" },
+    { "name": "combo", "config": { "window": 8, "max": 5 } },
+    { "name": "level", "config": { "goal": 5, "speedStep": 0.9, "obstaclesPerLevel": 2 } },
+    { "name": "input-keyboard", "enabled": true },
+    { "name": "input-ai", "enabled": false },
+    { "name": "snake" },
+    { "name": "renderer-terminal", "enabled": true },
+    { "name": "game" },
+    { "name": "multiplayer", "enabled": false, "config": { "count": 1 } },
+
+    { "name": "themes", "config": { "theme": "classic", "skin": "solid" } },
+    { "name": "theme-palettes", "enabled": false, "config": { "skin": "rainbow" } },
+    { "name": "powerups", "enabled": false, "config": { "maxOnBoard": 3 } },
+    { "name": "powerup-spawn", "enabled": false, "config": { "spawnEvery": 30 } },
+    { "name": "achievements", "enabled": false },
+    { "name": "achievement-track", "enabled": false },
+    { "name": "modes", "enabled": false, "config": { "mode": "classic" } },
+    { "name": "boss", "enabled": false },
+    { "name": "particles", "enabled": false },
+    { "name": "storage", "enabled": false, "config": {} },
+
+    { "name": "audit", "enabled": true, "config": { "maxEntries": 1000 } }
+  ]
+}

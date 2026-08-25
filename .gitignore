@@ -1,18 +1,19 @@
-# Build and Release Folders
-bin-debug/
-bin-release/
-[Oo]bj/
-[Bb]in/
+# 依赖
+node_modules/
 
-# Other files and folders
-.settings/
+# 运行时生成（storage 沙箱、日志）
+.snake-data/
+*.log
+logs/
 
-# Executables
-*.swf
-*.air
-*.ipa
-*.apk
+# 临时调试/复现脚本（一次性，不入库）
+_*.mjs
+*.repro.mjs
 
-# Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
-# should NOT be excluded as they contain compiler settings and other important
-# information for Eclipse / Flash Builder.
+# 系统
+.DS_Store
+Thumbs.db
+
+# 本地环境变量/密钥
+.env
+.env.local
