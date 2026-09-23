@@ -1,5 +1,8 @@
 # Cordis 贪吃蛇 · 一切皆插件的游戏
 
+> 仓库：<https://gitee.com/siwpan/cordis-snake> ｜ 许可：MIT-0（MIT No Attribution）（见 [LICENSE](LICENSE)）
+> 注：文中 <PATH> 为路径占位符，请替换为你本机实际的目录 / 可执行文件路径。
+
 用 **Cordis** 元框架（DeepSeek Harness 同款运行时内核）把贪吃蛇实现成一个
 **「无特权核心、一切皆插件」** 的应用。本项目既是一个能玩的终端贪吃蛇，
 也是一份**可运行的 Cordis 架构样例**：游戏逻辑、世界状态、蛇群、计时心跳、输入、
@@ -42,7 +45,7 @@
 ## 二、运行方式
 
 ```bash
-cd E:\docs\snake-game
+cd <PATH>
 npm install          # 依赖（cordis 等）已随本项目装好，可跳过
 npm start                                  # 终端交互模式（需 TTY）
 node src/index.js --headless --ticks=800   # AI 自对弈演示（无 TTY 也能跑）
@@ -355,7 +358,7 @@ node src/index.js --powerups --mode=maze --boss --particles --achievements --the
 
 ## 十一、上线前修复计划执行（gstack 全检 → 🟢 Go）
 
-来源：`E:\docs\deliverables\gstack\pre-launch-check-snake-game-2026-08-25.md`（产品评审员 / 安全官 / 质量门神三视角全检）。
+来源：`<PATH>`（产品评审员 / 安全官 / 质量门神三视角全检）。
 原结论：**🟡 条件 Go**，3 个 P0 阻塞项 + 6 个 P1/P2 行动项。以下为发布前（P0 + P1）行动项的执行与验证。
 
 ### 阻塞项 / 行动项修复清单
