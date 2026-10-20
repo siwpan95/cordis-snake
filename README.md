@@ -430,7 +430,7 @@ node src/index.js --powerups --mode=maze --boss --particles --achievements --the
 
 ### B3 · 接受 cordis `^4.0.0-rc.8`（RC 风险书面接受）
 - `package.json` 运行依赖为 `cordis@^4.0.0-rc.8`。经核查，npm `latest` 即 `4.0.0-rc.8`，**当前尚无稳定 4.x 发布**，故**书面接受 RC 风险**（不强行 pin 到不存在的版本）。
-- 缓解措施：CI 已固化 `npm audit --audit-level=high` advisory 步骤（见 `.github/workflows/ci.yml`），持续监控 cordis / cosmokit  Supply-chain 告警；一旦上游发布稳定版即升级并重跑三道门禁。
+- 缓解措施：本仓**没有 CI 工作流文件**（流水线未接入）；cordis / cosmokit 的 Supply-chain 告警改为在本地升级依赖时用 `npm audit --audit-level=high` 复核，一旦上游发布稳定版即升级并重跑本地门禁（`npm run gate` = selftest + verify）。
 
 ### B16 · 安全审计日志（对局边界 + 玩家生命周期）
 - 新增 `src/services/audit.js`：`AuditService`（provide `audit`），维护 `entries` 数组（`recent(n)` / `clear()`），每条 entry 含 `t`(时间戳) / `category` / `event` / 任意 `data`；同时写入 `ctx.logger`（`[audit]` 前缀）并 `emit('audit/entry')` 供下游消费。
